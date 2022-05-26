@@ -1,6 +1,6 @@
 autos <- mtcars
 
 head(autos)
-install.packages(dplyr)
+install.packages("dplyr")
 library(dplyr)
 select (autos, mpg)
