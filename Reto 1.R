@@ -40,3 +40,27 @@ SP.df %>% ggplot(aes( x = CountryCode, y=Percentage, fill = IsOfficial )) +
   geom_bin2d() +
   coord_flip()
 
+install.packages("rjson")
+library(rjson)
+
+
+URL <- "https://tools.learningcontainer.com/sample-json-file.json" # Asignando el link a una variable
+
+JsonData <- fromJSON(file= URL)     # Se guarda el JSon en un objeto de R
+
+
+install.packages("XML")
+library(XML)
+
+link <- "http://www-db.deis.unibo.it/courses/TW/DOCS/w3schools/xml/cd_catalog.xml"
+
+# Analizando el XML desde la web
+xmlfile <- xmlTreeParse(link)
+
+install.packages("rvest")
+library(rvest)
+theurl <- "https://solarviews.com/span/data2.htm"
+file <- read_html(theurl)    # Leemos el html
+tables <- html_nodes(file, "table")  
+
+table1 <- html_table(tables[4], fill = TRUE)
